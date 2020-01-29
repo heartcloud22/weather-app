@@ -51,8 +51,7 @@ const App = () => {
     getWeather(e.target.value);
   };
 
-  const AddCity = e => {
-    e.preventDefault();
+  const AddCity = () => {
     fetch("/api/cities", {
       method: "post",
       headers: { "Content-Type": "application/json" },
