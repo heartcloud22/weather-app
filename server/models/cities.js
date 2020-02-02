@@ -9,6 +9,9 @@ class Cities {
   }
 
   static insert(city, callback) {
+    if (city.trim() === "") {
+      return callback({ err: "City is required" });
+    }
     db.query(
       "INSERT INTO cities (city_name) VALUES ($1)",
       [city],
